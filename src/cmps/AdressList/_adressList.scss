@@ -6,20 +6,17 @@
     table,
     th,
     td {
-        border: 1px solid #ddd;
+        border: 1px solid rgba(187, 187, 187, 0.671);
         border-collapse: collapse;
         text-align: center;
     }
-
-    
+    td{
+        height:2.5rem
+    }   
     tr:nth-child(odd) {
         background-color: rgb(240, 240, 240);
     }
-    .table-box {
-        margin-top: 40px;
-        min-height: 60vh;
-        .houses-table {
-            width: 100%;
-        }
+    tr:first-child{
+font-weight: 600;
     }
 }
