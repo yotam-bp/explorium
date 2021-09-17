@@ -1,12 +1,14 @@
 button {
     border:0;
-    background-color: $clr2;
-    color:whitesmoke;
+    background-color: $clr3;
+    color:$clr4;
     padding: 5px 10px;
     margin: 5px;
-
+    border-radius:20px;
+    width: max-content;
+    transition: background-color .3s;
     &:hover{
-        background-color: $clr3;
+        background-color: rgba(92, 138, 115, 0.664);
     }
 }
 

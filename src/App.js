@@ -1,6 +1,7 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route,NavLink } from 'react-router-dom';
 import Header from './cmps/Header/Header'
+import Footer from './cmps/Footer/Footer'
 import OsmApp from './pages/OsmApp/OsmApp'
 
 // import './assets/main.css'
@@ -8,14 +9,15 @@ import OsmApp from './pages/OsmApp/OsmApp'
 const App = () => {
   return (
     <div className="content-wrapper">
-      <main className="main-container">
-      <Header />
       <BrowserRouter>
+      <Header />
+      <main className="main-container">
         <Switch>
           <Route path="/" component={OsmApp} />
         </Switch>
-      </BrowserRouter>
       </main>
+      <Footer/>
+      </BrowserRouter>
     </div>
   );
 }

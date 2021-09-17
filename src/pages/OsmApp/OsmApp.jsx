@@ -1,21 +1,24 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 import AddCsv from '../../cmps/AddCsv/AddCsv'
 import AdressList from '../../cmps/AdressList/AdressList'
+import Hero from '../../cmps/Hero/Hero'
 
 const OsmApp = () => {
 
     const [csvFile, setCsvFile] = useState(null)
 
     useEffect(() => {
-        setCsvFile(JSON.parse(window.localStorage.getItem('csvFile')));
+        console.log('use1')
+        JSON.parse(localStorage.getItem('csvFile') );
     }, []);
-    
-    // useEffect(() => {
-    // }, [csvFile]);
+
+    useEffect(() => {
+        console.log('use2')
+        localStorage.setItem('csvFile', JSON.stringify(csvFile));
+    }, [csvFile]);
     
     const handleOnDrop = (data) => {
-        console.log(data);
+        
         data.pop()
         setCsvFile(data)
         window.localStorage.setItem('csvFile', csvFile);
@@ -31,8 +34,8 @@ const OsmApp = () => {
     // if(!csvFile) return
     return (
         <section className="app-container">
-            <h2>main</h2>
-            <AddCsv handleOnDrop={handleOnDrop} handleOnError={handleOnError} handleOnRemoveFile={handleOnRemoveFile}></AddCsv>
+            <Hero/>
+            <AddCsv handleOnDrop={handleOnDrop} handleOnError={handleOnError} handleOnRemoveFile={handleOnRemoveFile}/>
             {csvFile && <AdressList csvFile={csvFile} />}
         </section>
     )

@@ -7,7 +7,7 @@ const AdressList = ({ csvFile }) => {
             <table className="table-base">
                 <tbody>
                 {csvFile.map((row, idx) => {
-                    return <AdressPreview  row={row} idx={idx} key={idx}/>
+                    return <AdressPreview  row={row} idx={idx} key={row.data.name}/>
                 })}
                 </tbody>
             </table>
