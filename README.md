@@ -8,6 +8,6 @@ In addition, it is possible to receive additional information upon request to an
 
 ### Deployment
 
-explorium-home-assignment.netlify.app
+https://explorium-home-assignment.netlify.app/
 
 
