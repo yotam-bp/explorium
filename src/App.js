@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route,NavLink } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Header from './cmps/Header/Header'
 import Footer from './cmps/Footer/Footer'
 import OsmApp from './pages/OsmApp/OsmApp'

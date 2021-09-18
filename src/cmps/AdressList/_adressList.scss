@@ -1,12 +1,23 @@
 .adresses-table {
     margin-bottom: 5rem;
+    position: relative;
+    .fa-times-circle {
+        position: absolute;
+        right: -3px;
+        top: -3px;
+        color: rgb(47, 47, 47);
+        transition: transform .3s;
+        &:hover{
+            transform:scale(1.4);
+            cursor: pointer;
+        }
+    }
     .table-base {
         border-radius: 20px;
-         width: 100%;
-         border:1px solid rgba(240, 240, 240, 0.774)
-         
+        width: 100%;
+        border: 1px solid rgba(240, 240, 240, 0.774);
     }
-  
+
     table,
     th,
     td {
@@ -27,6 +38,6 @@
         border-radius: 10px 0;
         background-color: $clr3;
         color: $clr4;
-        height: 5rem; 
+        height: 5rem;
     }
 }

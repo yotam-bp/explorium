@@ -5,23 +5,19 @@ import Hero from '../../cmps/Hero/Hero'
 
 const OsmApp = () => {
 
-    const [csvFile, setCsvFile] = useState(null)
+    const [csvFile, setCsvFile] = useState([]);
 
     useEffect(() => {
-        console.log('use1')
-        JSON.parse(localStorage.getItem('csvFile') );
+        setCsvFile(JSON.parse(localStorage.getItem('csvFile')));
     }, []);
 
     useEffect(() => {
-        console.log('use2')
         localStorage.setItem('csvFile', JSON.stringify(csvFile));
     }, [csvFile]);
-    
+
     const handleOnDrop = (data) => {
-        
         data.pop()
         setCsvFile(data)
-        window.localStorage.setItem('csvFile', csvFile);
     }
 
     const handleOnError = (err, file, inputElem, reason) => {
@@ -31,12 +27,12 @@ const OsmApp = () => {
     const handleOnRemoveFile = (data) => {
         setCsvFile(null)
     }
-    // if(!csvFile) return
+
     return (
         <section className="app-container">
-            <Hero/>
-            <AddCsv handleOnDrop={handleOnDrop} handleOnError={handleOnError} handleOnRemoveFile={handleOnRemoveFile}/>
-            {csvFile && <AdressList csvFile={csvFile} />}
+            <Hero />
+            <AddCsv handleOnDrop={handleOnDrop} handleOnError={handleOnError} handleOnRemoveFile={handleOnRemoveFile} />
+            {csvFile && <AdressList csvFile={csvFile} handleOnRemoveFile={handleOnRemoveFile} />}
         </section>
     )
 }

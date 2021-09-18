@@ -10,8 +10,6 @@ const AddCsv = ({ handleOnDrop, handleOnError, handleOnRemoveFile }) => {
                 onDrop={handleOnDrop}
                 onError={handleOnError}
                 addRemoveButton
-                
-                // removeButtonColor='#659cef'
                 onRemoveFile={handleOnRemoveFile}
                 style={{
                     dropArea: {
@@ -35,7 +33,6 @@ const AddCsv = ({ handleOnDrop, handleOnError, handleOnRemoveFile }) => {
                     },
                     fileNameInfo: {
                         backgroundColor: 'inherint',
-                        // borderRadius: 3,
                         fontSize: 14,
                         lineHeight: 1,
                         padding: ' 0.2em',

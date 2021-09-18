@@ -9,7 +9,7 @@ const Hero = () => {
             <div className="left fs38">
                 <h1>Nice & Easy way <br></br>
                     to view your data<br></br>
-                    in A table </h1>
+                    in a table </h1>
             </div>
             <div className="right">
                 <img src={hero} alt="hero" />

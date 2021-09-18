@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom'
+import React from 'react'
 const Footer = () => {
     const linkedinURL = 'https://www.linkedin.com/in/yotam-ben-porat'
     const githubURL = 'https://github.com/yotam-bp'
@@ -11,15 +11,18 @@ const Footer = () => {
                 </div>
                 <div className="icons flex space-between">
                     <a href={linkedinURL}
-                        target="_blank">
+                        target="_blank"
+                        rel="noopener noreferrer">
                         <i className="fab fa-linkedin"></i>
                     </a>
                     <a href={githubURL}
-                        target="_blank">
+                        target="_blank"
+                        rel="noopener noreferrer">
                     <i className="fab fa-github-square"></i>
                     </a>
                     <a href={facebookURL}
-                        target="_blank">
+                        target="_blank"
+                        rel="noopener noreferrer">
                     <i className="fab fa-facebook-square"></i>
                     </a>
                 </div>

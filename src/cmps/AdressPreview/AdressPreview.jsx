@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { getSchoolsData } from '../../api/OSMapi'
 
-const AdressList = ({ row, idx }) => {
+const AdressList = ({ row, idx, }) => {
 
     const [schools, setSchools] = useState(null)
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(false);
 
-    const addSchools = async () => {
+    const addSchools = async (row) => {
         setIsLoading(true);
         let bounding_box = locationsToBoundingBox(row.data[12], row.data[13]);
         getSchoolsData(bounding_box)
@@ -21,6 +21,7 @@ const AdressList = ({ row, idx }) => {
             })
     }
 
+
     const locationsToBoundingBox = (latitude, longitude, padding = 0.01) => {
         let bounding_box = [null, null, null, null]
         bounding_box[0] = Math.min(bounding_box[0] || longitude, longitude) - padding
@@ -31,13 +32,15 @@ const AdressList = ({ row, idx }) => {
     }
 
     const getInfoBtn = () => {
+
         if (schools) return schools.length
         if (isLoading) return <p>Loading...</p>
-        if (error) return <button className="more-info-btn" onClick={() => addSchools()}>more info</button>
-        else return <button className="more-info-btn" onClick={() => addSchools()}>more info</button>
+        if (error) return <button className="more-info-btn" onClick={() => addSchools(row)}>more info</button>
+        else return <button className="more-info-btn" onClick={() => addSchools(row)}>more info</button>
     }
 
     return (
+
         <tr className="data row" key={row.data}>
             {row.data.map((cell, i) => {
                 return <td key={cell.id}>{cell}</td>
@@ -45,6 +48,7 @@ const AdressList = ({ row, idx }) => {
             {(idx === 0) ? <td> Schools </td> :
                 <td>{getInfoBtn()}</td>}
         </tr>
+
     )
 }
 
